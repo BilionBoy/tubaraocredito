@@ -1,0 +1,495 @@
+<style>
+  :root {
+      /* New Premium Color Scheme */
+      --primary: #00dc82;
+      --primary-dark: #00b368;
+      --secondary: #a855f7;
+      --dark: #0a0a0a;
+      --darker: #050505;
+      --light: #ffffff;
+      --gray: #71717a;
+      --surface: #18181b;
+      --surface-dark: #111111;
+
+      --gradient-1: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --gradient-2: linear-gradient(45deg, var(--dark) 0%, var(--surface) 100%);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+      --radius-sm: 0.5rem;
+      --radius: 1rem;
+      --radius-lg: 1.5rem;
+  }
+
+  body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--darker);
+      color: var(--light);
+      line-height: 1.6;
+  }
+
+  .navbar {
+      background: rgba(5, 5, 5, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+  }
+
+  .navbar-brand img {
+      height: 65px;
+  }
+
+  /* Hero Section */
+  .hero {
+      min-height: 100vh;
+      padding: 8rem 0 4rem;
+      background: var(--darker);
+      position: relative;
+      overflow: hidden;
+  }
+
+  .hero::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle at 50% 50%, var(--surface) 0%, transparent 70%);
+      opacity: 0.4;
+  }
+
+  .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+  }
+
+  .hero p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      max-width: 600px;
+  }
+
+  .btn-primary {
+      background: var(--gradient-1);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      background: var(--gradient-1);
+  }
+
+  /* Features Section */
+  .features {
+      padding: 8rem 0;
+      background: var(--dark);
+  }
+
+  .section-title {
+      text-align: center;
+      margin-bottom: 5rem;
+  }
+
+  .section-title h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  .section-title p {
+      color: var(--gray);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+  }
+
+  .feature-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      height: 100%;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-1);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+  }
+
+  .feature-card:hover {
+      transform: translateY(-10px);
+  }
+
+  .feature-card:hover::before {
+      opacity: 0.05;
+  }
+
+  .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      background: var(--gradient-1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      font-size: 1.75rem;
+      color: var(--light);
+      position: relative;
+      z-index: 1;
+  }
+
+  .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+  }
+
+  .feature-description {
+      color: var(--gray);
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+  }
+
+  /* Stats Section */
+  .stats {
+      padding: 6rem 0;
+      background: var(--gradient-2);
+  }
+
+  .stat-card {
+      text-align: center;
+      padding: 2rem;
+  }
+
+  .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+  }
+
+  .stat-label {
+      color: var(--gray);
+      font-size: 1.125rem;
+      font-weight: 500;
+  }
+
+  /* Testimonials Section */
+  .testimonials {
+      padding: 8rem 0;
+      background: var(--dark);
+  }
+
+  .testimonial-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+      transform: translateY(-5px);
+      background: var(--surface-dark);
+  }
+
+  .testimonial-content {
+      font-size: 1.125rem;
+      color: var(--light);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 2rem;
+  }
+
+  .testimonial-content::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.5rem;
+      font-size: 4rem;
+      color: var(--primary);
+      opacity: 0.2;
+      font-family: serif;
+  }
+
+  .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .author-avatar {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      font-weight: 600;
+      font-size: 1.125rem;
+  }
+
+  .author-info h4 {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+  }
+
+  .author-info p {
+      margin: 0;
+      color: var(--gray);
+      font-size: 0.875rem;
+  }
+
+  /* CTA Section */
+  .cta {
+      padding: 8rem 0;
+      background: var(--darker);
+      position: relative;
+      overflow: hidden;
+  }
+
+  .cta::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle at center, var(--surface) 0%, transparent 70%);
+      opacity: 0.4;
+  }
+
+  .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+  }
+
+  .cta h2 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  .cta p {
+      color: var(--gray);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+      .hero h1 {
+          font-size: 2.5rem;
+      }
+
+      .section-title h2 {
+          font-size: 2rem;
+      }
+
+      .stat-number {
+          font-size: 2.5rem;
+      }
+
+      .cta h2 {
+          font-size: 2rem;
+      }
+  }
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/layout/assets/img/TUBARAOLOGO.png" alt="Tubarão do Crédito">
+      </a>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-up">
+          <h1>Domine Suas Finanças</h1>
+          <p>Transforme sua gestão financeira com a plataforma mais completa do mercado. Controle, análise e crescimento em um só lugar.</p>
+          <button class="btn btn-primary btn-lg">Comece Agora</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Recursos Poderosos</h2>
+        <p>Tudo que você precisa para uma gestão financeira eficiente</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="ri-line-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Análise Avançada</h3>
+            <p class="feature-description">Relatórios detalhados e insights valiosos para tomar as melhores decisões.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="ri-file-list-3-line"></i>
+            </div>
+            <h3 class="feature-title">Gestão de Contratos</h3>
+            <p class="feature-description">Organize e acompanhe todos os seus contratos em um só lugar.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="ri-group-line"></i>
+            </div>
+            <h3 class="feature-title">Base de Clientes</h3>
+            <p class="feature-description">Gerencie sua carteira de clientes com eficiência e praticidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3" data-aos="fade-up">
+          <div class="stat-card">
+            <div class="stat-number">5K+</div>
+            <div class="stat-label">Clientes Ativos</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-card">
+            <div class="stat-number">R$10M+</div>
+            <div class="stat-label">Em Transações</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfação</div>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Suporte</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>O Que Nossos Clientes Dizem</h2>
+        <p>Histórias reais de sucesso com o Tubarão do Crédito</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <p class="testimonial-content">O Tubarão do Crédito revolucionou a forma como gerenciamos nossas finanças. Simplesmente incrível!</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JD</div>
+              <div class="author-info">
+                <h4>João David</h4>
+                <p>Diretor Financeiro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <p class="testimonial-content">A melhor decisão que tomamos foi implementar esta plataforma. Os resultados são impressionantes.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MS</div>
+              <div class="author-info">
+                <h4>Maria Silva</h4>
+                <p>CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <p class="testimonial-content">Controle total das finanças e relatórios precisos. Exatamente o que precisávamos!</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">PS</div>
+              <div class="author-info">
+                <h4>Pedro Santos</h4>
+                <p>Gerente Comercial</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="cta-content" data-aos="fade-up">
+            <h2>Pronto para Transformar suas Finanças?</h2>
+            <p>Junte-se a milhares de empresas que já confiam no Tubarão do Crédito</p>
+            <button class="btn btn-primary btn-lg">Começar Agora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

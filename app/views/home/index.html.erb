@@ -1,5 +1,370 @@
-<div class="container-fluid">
-  <div class="row">
-    <h1>Olá</h1>
+<style>
+  :root {
+      /* Light Theme */
+      --light-bg: #ffffff;
+      --light-surface: #ffffff;
+      --light-border: #f1f5f9;
+      --light-text: #0f172a;
+      --light-text-secondary: #64748b;
+      --light-hover: #f8fafc;
+
+      /* Dark Theme */
+      --dark-bg: #0f172a;
+      --dark-surface: #1e293b;
+      --dark-border: #334155;
+      --dark-text: #f8fafc;
+      --dark-text-secondary: #94a3b8;
+      --dark-hover: #1e293b;
+
+      /* Accent Colors */
+      --accent-green: #10b981;
+      --accent-green-light: rgba(16, 185, 129, 0.1);
+      --accent-red: #ef4444;
+      --accent-red-light: rgba(239, 68, 68, 0.1);
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+      --radius-sm: 0.5rem;
+      --radius: 0.75rem;
+      --radius-lg: 1rem;
+  }
+
+  html {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.025em;
+  }
+
+  html.dark body {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+  }
+
+  .dashboard-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 2rem;
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background: var(--light-surface);
+      border: 1px solid var(--light-border);
+      color: var(--light-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.25rem;
+  }
+
+  .dark .theme-toggle {
+      background: var(--dark-surface);
+      border-color: var(--dark-border);
+      color: var(--dark-text);
+  }
+
+  /* Filter Section */
+  .filter-section {
+      background: var(--light-surface);
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+  }
+
+  .dark .filter-section {
+      background: var(--dark-surface);
+      border-color: var(--dark-border);
+  }
+
+  .filter-label {
+      color: var(--light-text-secondary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+  }
+
+  .dark .filter-label {
+      color: var(--dark-text-secondary);
+  }
+
+  .form-control, .form-select {
+      background: var(--light-bg);
+      border: 1px solid var(--light-border);
+      color: var(--light-text);
+      padding: 0.875rem 1rem;
+      height: 3.25rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+  }
+
+  .dark .form-control, .dark .form-select {
+      background: var(--dark-bg);
+      border-color: var(--dark-border);
+      color: var(--dark-text);
+  }
+
+  .form-control:focus, .form-select:focus {
+      border-color: var(--accent-green);
+      box-shadow: 0 0 0 4px var(--accent-green-light);
+  }
+
+  .btn-filter {
+      background: var(--accent-green);
+      border: none;
+      height: 3.25rem;
+      padding: 0 2rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border-radius: var(--radius);
+      color: white;
+      transition: all 0.2s ease;
+  }
+
+  .btn-filter:hover {
+      transform: translateY(-1px);
+      filter: brightness(110%);
+  }
+
+  /* Metric Cards */
+  .metric-card {
+      background: var(--light-surface);
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      height: 100%;
+      transition: all 0.2s ease;
+  }
+
+  .dark .metric-card {
+      background: var(--dark-surface);
+      border-color: var(--dark-border);
+  }
+
+  .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+  }
+
+  .metric-title {
+      color: var(--light-text-secondary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+  }
+
+  .dark .metric-title {
+      color: var(--dark-text-secondary);
+  }
+
+  .metric-value {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      letter-spacing: -0.025em;
+      line-height: 1;
+  }
+
+  .metric-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.2s ease;
+  }
+
+  .icon-green {
+      background: var(--accent-green-light);
+      color: var(--accent-green);
+  }
+
+  .icon-red {
+      background: var(--accent-red-light);
+      color: var(--accent-red);
+  }
+
+  /* Chart Sections */
+  .chart-section {
+      background: var(--light-surface);
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+  }
+
+  .dark .chart-section {
+      background: var(--dark-surface);
+      border-color: var(--dark-border);
+  }
+
+  .chart-title {
+      color: var(--accent-green);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+  }
+
+  .chart-placeholder {
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-bg);
+      color: var(--light-text-secondary);
+      border-radius: var(--radius);
+      font-weight: 500;
+  }
+
+  .dark .chart-placeholder {
+      background: var(--dark-bg);
+      color: var(--dark-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+      .dashboard-container {
+          padding: 1rem;
+      }
+
+      .filter-section {
+          padding: 1.5rem;
+      }
+
+      .btn-filter {
+          width: 100%;
+          margin-top: 1rem;
+      }
+
+      .metric-value {
+          font-size: 1.875rem;
+      }
+  }
+</style>
+<button class="theme-toggle" onclick="document.documentElement.classList.toggle('dark')">
+  <i class="ri-contrast-2-line"></i>
+</button>
+<div class="dashboard-container">
+  <!-- Filters -->
+  <div class="filter-section">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <label class="filter-label">Data Início</label>
+        <input type="date" class="form-control" value="2025-02-01">
+      </div>
+      <div class="col-md-3">
+        <label class="filter-label">Data Fim</label>
+        <input type="date" class="form-control" value="2025-02-28">
+      </div>
+      <div class="col-md-3">
+        <label class="filter-label">Cliente</label>
+        <select class="form-select">
+          <option selected>Selecionar Cliente</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="filter-label">Categoria</label>
+        <div class="d-flex gap-3">
+          <select class="form-select">
+            <option selected>Selecionar Categoria</option>
+          </select>
+          <button class="btn btn-filter">Filtrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Metric Cards -->
+  <div class="row g-4 mb-4">
+    <div class="col-sm-6 col-lg-3">
+      <div class="metric-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="metric-title">Total de Contratos</div>
+            <h3 class="metric-value">R$ 0.00</h3>
+          </div>
+          <div class="metric-icon icon-green">
+            <i class="ri-team-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="metric-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="metric-title">Falta Pagar</div>
+            <h3 class="metric-value">R$ 0.00</h3>
+          </div>
+          <div class="metric-icon icon-red">
+            <i class="ri-arrow-down-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="metric-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="metric-title">Pagos</div>
+            <h3 class="metric-value">R$ 0.00</h3>
+          </div>
+          <div class="metric-icon icon-green">
+            <i class="ri-money-dollar-circle-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <div class="metric-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="metric-title">Lucro</div>
+            <h3 class="metric-value">R$ 0.00</h3>
+          </div>
+          <div class="metric-icon icon-green">
+            <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Charts -->
+  <div class="chart-section">
+    <h3 class="chart-title">Gráfico Diário</h3>
+    <div class="chart-placeholder">
+      Área do gráfico diário
+    </div>
+  </div>
+  <div class="chart-section">
+    <h3 class="chart-title">Gráfico Mensal</h3>
+    <div class="chart-placeholder">
+      Área do gráfico mensal
+    </div>
   </div>
 </div>
