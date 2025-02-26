@@ -1,0 +1,33 @@
+<!-- Register View -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+      <div class="auth-card">
+        <div class="auth-logo">
+          <img src="/layout/assets/img/TUBARAOLOGO.png" style="height: 60px">
+        </div>
+        <h1 class="auth-title">Registrar</h1>
+        <p class="auth-subtitle">Preencha as informações abaixo para criar sua conta</p>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <%= f.input :email, placeholder: "Email", input_html: { class: "form-control" } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <%= f.input :password, placeholder: "Senha", input_html: { class: "form-control" } %>
+            </div>
+            <div class="col-md-6 mb-4">
+              <%= f.input :password_confirmation, placeholder: "Confirmar senha", input_html: { class: "form-control" } %>
+            </div>
+          </div>
+          <%= f.button :submit, "Registrar", class: "btn btn-primary w-100" %>
+          <div class="links mt-3 text-center">
+            <%= render "devise/shared/links" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

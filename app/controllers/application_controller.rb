@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend # Inclui Pagy para paginação
-
+  before_action :authenticate_user!
   before_action :set_layout_by_controller # Define o layout dinamicamente
 
   private

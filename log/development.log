@@ -19353,3 +19353,724 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:40:10 -0400
+  
+ActiveRecord::NoDatabaseError (We could not find your database: tubarao_credito_development. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+
+Causes:
+PG::ConnectionBad (connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "tubarao_credito_development" does not exist
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-02-26 12:40:12 -0400
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE DATABASE "tubarao_credito_development" ENCODING = 'unicode'[0m
+  [1m[35m (67.1ms)[0m  [1m[35mCREATE DATABASE "tubarao_credito_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:40:12 -0400
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | GC: 7.1ms)
+Completed 200 OK in 70ms (Views: 66.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:42:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250226164204_devise_create_users.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-02-26 12:42:20 -0400
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4714981560894200505)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-26 16:42:20.638977', '2025-02-26 16:42:20.638982') RETURNING "key"[0m
+Migrating to DeviseCreateUsers (20250226164204)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250226164204') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4714981560894200505)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:42:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.2ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | GC: 14.3ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:43:14 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:43:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 45.5ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 65.0ms | GC: 9.6ms)
+Completed 200 OK in 74ms (Views: 66.7ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 9.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:43:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:44:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.7ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 9.6ms | GC: 0.5ms)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:44:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:44:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 4.9ms | GC: 0.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 15.7ms | GC: 0.9ms)
+Completed 200 OK in 29ms (Views: 17.9ms | ActiveRecord: 4.0ms (0 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:44:30 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 17.7ms | GC: 8.0ms)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 2.4ms (0 queries, 0 cached) | GC: 8.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:44:35 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 4.9ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 12.2ms | GC: 0.1ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:45:01 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | GC: 0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 8.9ms | GC: 0.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 19.0ms | GC: 0.9ms)
+Completed 200 OK in 32ms (Views: 21.6ms | ActiveRecord: 2.6ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:23 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | GC: 0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 3.0ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 9.5ms | GC: 0.5ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:27 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:28 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 3.4ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 11.1ms | GC: 0.9ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:32 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:35 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 8.2ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:40 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 5.9ms | GC: 2.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 13.5ms | GC: 4.0ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:47:44 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 14.0ms | GC: 3.7ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:53:55 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 7.5ms | GC: 3.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 20.7ms | GC: 4.7ms)
+Completed 200 OK in 34ms (Views: 22.1ms | ActiveRecord: 4.0ms (0 queries, 0 cached) | GC: 4.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:53:56 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 7.9ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:54:39 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 3.4ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 12.3ms | GC: 1.1ms)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 2.9ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:54:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:54:42 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-02-26 12:54:51 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 5.4ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+  
+NoMethodError (undefined method `nome' for an instance of User):
+  
+activemodel (7.2.2.1) lib/active_model/attribute_methods.rb:512:in `method_missing'
+activerecord (7.2.2.1) lib/active_record/attribute_methods.rb:491:in `method_missing'
+activemodel (7.2.2.1) lib/active_model/validator.rb:152:in `block in validate'
+activemodel (7.2.2.1) lib/active_model/validator.rb:151:in `each'
+activemodel (7.2.2.1) lib/active_model/validator.rb:151:in `validate'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:385:in `block in make_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:179:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:668:in `block (2 levels) in default_terminator'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:667:in `catch'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:667:in `block in default_terminator'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:180:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:109:in `run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:913:in `_run_validate_callbacks'
+activemodel (7.2.2.1) lib/active_model/validations.rb:441:in `run_validations!'
+activemodel (7.2.2.1) lib/active_model/validations/callbacks.rb:115:in `block in run_validations!'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:110:in `run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:913:in `_run_validation_callbacks'
+activemodel (7.2.2.1) lib/active_model/validations/callbacks.rb:115:in `run_validations!'
+activemodel (7.2.2.1) lib/active_model/validations.rb:366:in `valid?'
+activerecord (7.2.2.1) lib/active_record/validations.rb:71:in `valid?'
+activerecord (7.2.2.1) lib/active_record/validations.rb:91:in `perform_validations'
+activerecord (7.2.2.1) lib/active_record/validations.rb:48:in `save'
+activerecord (7.2.2.1) lib/active_record/transactions.rb:362:in `block in save'
+activerecord (7.2.2.1) lib/active_record/transactions.rb:418:in `block (2 levels) in with_transaction_returning_status'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/transaction.rb:616:in `block in within_new_transaction'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/transaction.rb:613:in `within_new_transaction'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/database_statements.rb:361:in `transaction'
+activerecord (7.2.2.1) lib/active_record/transactions.rb:414:in `block in with_transaction_returning_status'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/connection_handling.rb:296:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/transactions.rb:410:in `with_transaction_returning_status'
+activerecord (7.2.2.1) lib/active_record/transactions.rb:362:in `save'
+activerecord (7.2.2.1) lib/active_record/suppressor.rb:52:in `save'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (7.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:226:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rendering.rb:193:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/mapper.rb:32:in `block in <class:Constraints>'
+actionpack (7.2.2.1) lib/action_dispatch/routing/mapper.rb:62:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:55:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 13.5ms | GC: 3.4ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:55:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 3.2ms | GC: 0.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 4.5ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:55:31 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.1ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.1ms | GC: 0.1ms)
+Completed 200 OK in 211ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2025-02-26 12:55:33 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/devise_application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:55:33 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-02-26 12:55:36 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-02-26 12:55:43 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrar"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (10.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-02-26 16:55:43.278744"], ["updated_at", "2025-02-26 16:55:43.278744"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 231ms (ActiveRecord: 13.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:55:43 -0400
+Processing by HomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:55:43 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/?class=btn+btn-logout" for 127.0.0.1 at 2025-02-26 12:55:46 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:56:35 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2025-02-26 12:56:37 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 10ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:56:37 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:56:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 14.6ms | GC: 3.8ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:56:41 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 224ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:56:41 -0400
+Processing by HomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 5.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:56:41 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 15.8ms)
+Completed 200 OK in 28ms (Views: 19.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 21.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2025-02-26 12:56:45 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 8ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-26 12:56:45 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-02-26 12:56:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 7.3ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
